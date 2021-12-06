@@ -47,13 +47,7 @@ class CheckBoxTableWidget(QTableWidget):
         chkBox = CheckBox(r_idx, self._default_check_flag)
         chkBox.checkedSignal.connect(self.__sendCheckedSignal)
 
-        lay = QGridLayout()
-        lay.addWidget(chkBox)
-
-        widget = QWidget()
-        widget.setLayout(lay)
-
-        self.setCellWidget(r_idx, 0, widget)
+        self.setCellWidget(r_idx, 0, chkBox)
 
         if self._default_check_flag:
             self.checkedSignal.emit(r_idx, Qt.Checked)
@@ -64,7 +58,7 @@ class CheckBoxTableWidget(QTableWidget):
 
     def toggleState(self, state):
         for i in range(self.rowCount()):
-            item = super().cellWidget(i, 0)
+            item = super().cellWidget(i, 0).layout().itemAt(0).widget()
             if item.checkState() != state:
                 item.setCheckState(state)
 
@@ -94,4 +88,6 @@ class CheckBoxTableWidget(QTableWidget):
         flag_lst = reversed(flag_lst)
         for i in flag_lst:
             self.removeRow(i)
+
+
 
