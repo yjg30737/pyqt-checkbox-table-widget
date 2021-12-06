@@ -1,6 +1,6 @@
 import typing
 
-from PyQt5.QtWidgets import QHeaderView, QTableWidget, QWidget, QGridLayout
+from PyQt5.QtWidgets import QHeaderView, QTableWidget, QWidget, QGridLayout, QApplication
 from PyQt5.QtCore import Qt, pyqtSignal
 
 from pyqt_checkbox_table_widget.checkBox import CheckBox
@@ -36,7 +36,6 @@ class CheckBoxTableWidget(QTableWidget):
         if self.horizontalHeader():
             self.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
             self.horizontalHeader().setSectionResizeMode(0, QHeaderView.Fixed)
-            self.setColumnWidth(0, 10)
 
     def setRowCount(self, rows: int) -> None:
         super().setRowCount(rows)
@@ -88,6 +87,4 @@ class CheckBoxTableWidget(QTableWidget):
         flag_lst = reversed(flag_lst)
         for i in flag_lst:
             self.removeRow(i)
-
-
 
