@@ -75,4 +75,6 @@ Result
 
 https://user-images.githubusercontent.com/55078043/144937804-958af370-5069-4fe9-870d-ace9838eb483.mp4
 
+## Similar package
+<a href="https://github.com/yjg30737/pyqt-checkbox-list-widget.git">pyqt-checkbox-list-widget</a>
 
