@@ -5,7 +5,7 @@ PyQt's QTableWidget which has checkbox as first header item
 PyQt5 >= 5.8
 
 ## Setup
-``` pip3 install git+https://github.com/yjg30737/pyqt-checkbox-table-widget.git --upgrade```
+`python -m pip install pyqt-checkbox-table-widget`
 
 ## Example
 Code Example 1
