@@ -17,6 +17,8 @@ class CheckBox(QWidget):
 
         lay = QGridLayout()
         lay.addWidget(chkBox)
+        lay.setContentsMargins(2, 2, 2, 2)
+        lay.setAlignment(chkBox, Qt.AlignCenter)
 
         self.setLayout(lay)
 
