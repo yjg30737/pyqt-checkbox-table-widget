@@ -1,6 +1,6 @@
 import typing
 
-from PyQt5.QtWidgets import QHeaderView, QTableWidget, QWidget, QGridLayout, QApplication
+from PyQt5.QtWidgets import QHeaderView, QTableWidget
 from PyQt5.QtCore import Qt, pyqtSignal
 
 from pyqt_checkbox_table_widget.checkBox import CheckBox
