@@ -7,7 +7,7 @@ from pyqt_checkbox_table_widget.checkBox import CheckBox
 
 
 class CheckBoxTableWidget(QTableWidget):
-    checkedSignal = pyqtSignal(int, Qt.CheckState)
+    checkedSignal = Signal(int, Qt.CheckState)
 
     def __init__(self, parent=None):
         self._default_check_flag = False
@@ -67,11 +67,11 @@ class CheckBoxTableWidget(QTableWidget):
     def getUncheckedRows(self):
         return self.__getCheckedStateOfRows(Qt.Unchecked)
 
-    def __getCheckedStateOfRows(self, flag: Qt.CheckState):
+    def __getCheckedStateOfRows(self, flag: Qt.Checked):
         flag_lst = []
         for i in range(self.rowCount()):
             item = super().cellWidget(i, 0)
-            if item.checkState() == flag:
+            if item.isChecked() == flag:
                 flag_lst.append(i)
 
         return flag_lst
