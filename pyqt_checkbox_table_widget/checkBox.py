@@ -28,3 +28,12 @@ class CheckBox(QWidget):
     def isChecked(self):
         f = self.layout().itemAt(0).widget().isChecked()
         return Qt.Checked if f else Qt.Unchecked
+
+    def setChecked(self, f):
+        if isinstance(f, Qt.CheckState):
+            self.getCheckBox().setCheckState(f)
+        elif isinstance(f, bool):
+            self.getCheckBox().setChecked(f)
+
+    def getCheckBox(self):
+        return self.layout().itemAt(0).widget()

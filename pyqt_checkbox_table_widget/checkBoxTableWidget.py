@@ -57,9 +57,8 @@ class CheckBoxTableWidget(QTableWidget):
 
     def toggleState(self, state):
         for i in range(self.rowCount()):
-            item = super().cellWidget(i, 0).layout().itemAt(0).widget()
-            if item.checkState() != state:
-                item.setCheckState(state)
+            item = super().cellWidget(i, 0).getCheckBox()
+            item.setChecked(state)
 
     def getCheckedRows(self):
         return self.__getCheckedStateOfRows(Qt.Checked)
@@ -76,6 +75,9 @@ class CheckBoxTableWidget(QTableWidget):
 
         return flag_lst
 
+    def setCheckedAt(self, idx, f):
+        self.cellWidget(idx, 0).setChecked(f)
+
     def removeCheckedRows(self):
         self.__removeCertainCheckedStateRows(Qt.Checked)
 
@@ -87,4 +89,3 @@ class CheckBoxTableWidget(QTableWidget):
         flag_lst = reversed(flag_lst)
         for i in flag_lst:
             self.removeRow(i)
-
