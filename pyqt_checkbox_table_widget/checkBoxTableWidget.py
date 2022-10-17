@@ -7,7 +7,7 @@ from pyqt_checkbox_table_widget.checkBox import CheckBox
 
 
 class CheckBoxTableWidget(QTableWidget):
-    checkedSignal = Signal(int, Qt.CheckState)
+    checkedSignal = pyqtSignal(int, Qt.CheckState)
 
     def __init__(self, parent=None):
         self._default_check_flag = False

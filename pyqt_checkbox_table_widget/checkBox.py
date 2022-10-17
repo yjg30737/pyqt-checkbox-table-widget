@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QCheckBox, QWidget, QGridLayout
 
 
 class CheckBox(QWidget):
-    checkedSignal = Signal(int, Qt.CheckState)
+    checkedSignal = pyqtSignal(int, Qt.CheckState)
 
     def __init__(self, r_idx, flag):
         super().__init__()
