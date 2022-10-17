@@ -7,6 +7,20 @@ PyQt5 >= 5.8
 ## Setup
 `python -m pip install pyqt-checkbox-table-widget`
 
+## Method Overview
+Many methods is changed/overriden because of the fact that check box being used in first column.
+* `setHorizontalHeaderLabels(labels: typing.Iterable[str])` - Sets horizontal header label except for first column (for check box)
+* `clearContents(start_r_idx=0)` - Remove all contents including check box from start_r_idx
+* `setDefaultValueOfCheckBox(flag: bool)` - Self-explanatory.
+* `stretchEveryColumnExceptForCheckBox()` - Apply self.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch) except for first column, which is for check box.
+* `setRowCount(rows: int)`
+* `toggleState(state)` - Toggle every single checkbox. State should be Qt.CheckState. You can see how to use this feature in Code Example 2 below.
+* `getCheckedRows()` - Return the list of indexes of row which are checked.
+* `getUncheckedRows()`
+* `setCheckedAt(idx: int, f: bool)` - If f is True, the check box at idx is checked. f is False, the check box at idx is unchecked.
+* `removeCheckedRows()`
+* `removeUncheckedRows()`
+
 ## Example
 Code Example 1
 ```python
