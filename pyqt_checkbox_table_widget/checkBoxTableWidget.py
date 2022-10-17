@@ -75,7 +75,7 @@ class CheckBoxTableWidget(QTableWidget):
 
         return flag_lst
 
-    def setCheckedAt(self, idx, f):
+    def setCheckedAt(self, idx: int, f: bool):
         self.cellWidget(idx, 0).setChecked(f)
 
     def removeCheckedRows(self):
