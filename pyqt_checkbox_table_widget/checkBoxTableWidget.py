@@ -37,6 +37,10 @@ class CheckBoxTableWidget(QTableWidget):
             self.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
             self.horizontalHeader().setSectionResizeMode(0, QHeaderView.Fixed)
 
+    def insertRow(self, row: int) -> None:
+        super().insertRow(row)
+        self.__setCheckBox(row)
+
     def setRowCount(self, rows: int) -> None:
         super().setRowCount(rows)
         for row in range(0, rows):
