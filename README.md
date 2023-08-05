@@ -14,6 +14,7 @@ Many methods is changed/overriden because of the fact that check box being used 
 * `setDefaultValueOfCheckBox(flag: bool)` - Self-explanatory.
 * `stretchEveryColumnExceptForCheckBox()` - Apply self.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch) except for first column, which is for check box.
 * `setRowCount(rows: int)`
+* `insertRow(rows: int)`
 * `toggleState(state)` - Toggle every single checkbox. State should be Qt.CheckState. You can see how to use this feature in Code Example 2 below.
 * `getCheckedRows()` - Return the list of indexes of row which are checked.
 * `getUncheckedRows()`
