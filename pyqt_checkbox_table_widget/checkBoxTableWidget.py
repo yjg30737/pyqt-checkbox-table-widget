@@ -11,7 +11,7 @@ class CheckBoxTableWidget(QTableWidget):
 
     def __init__(self, parent=None):
         self._default_check_flag = False
-        super().__init__()
+        super().__init__(parent)
         self.__initUi()
 
     def __initUi(self):
