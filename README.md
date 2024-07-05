@@ -9,7 +9,7 @@ PyQt5 >= 5.8
 
 ## Method Overview
 Many methods is changed/overriden because of the fact that check box being used in first column.
-* `setHorizontalHeaderLabels(labels: typing.Iterable[str])` - Sets horizontal header label except for first column (for check box)
+* `setHorizontalHeaderLabels(labels: typing.Iterable[str])` - Sets horizontal header label except for first column (for check box), automatically set the count of the columns based on labels
 * `clearContents(start_r_idx=0)` - Remove all contents including check box from start_r_idx
 * `setDefaultValueOfCheckBox(flag: bool)` - Self-explanatory.
 * `stretchEveryColumnExceptForCheckBox()` - Apply self.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch) except for first column, which is for check box.
