@@ -21,6 +21,7 @@ class CheckBoxTableWidget(QTableWidget):
     def setHorizontalHeaderLabels(self, labels: typing.Iterable[str]) -> None:
         lst = [_ for _ in labels if _]
         lst.insert(0, '') # 0 index vacant for checkbox
+        self.setColumnCount(len(lst))
         super().setHorizontalHeaderLabels(lst)
         self.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)
 
