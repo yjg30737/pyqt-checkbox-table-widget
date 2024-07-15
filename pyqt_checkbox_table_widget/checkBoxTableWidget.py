@@ -23,7 +23,7 @@ class CheckBoxTableWidget(QTableWidget):
         lst.insert(0, '') # 0 index vacant for checkbox
         self.setColumnCount(len(lst))
         super().setHorizontalHeaderLabels(lst)
-        self.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)
+        self.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.ResizeToContents)
 
     def clearContents(self, start_r_idx=0):
         for i in range(start_r_idx, self.rowCount()):
@@ -35,8 +35,8 @@ class CheckBoxTableWidget(QTableWidget):
 
     def stretchEveryColumnExceptForCheckBox(self):
         if self.horizontalHeader():
-            self.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-            self.horizontalHeader().setSectionResizeMode(0, QHeaderView.Fixed)
+            self.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+            self.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Fixed)
 
     def insertRow(self, row: int) -> None:
         super().insertRow(row)
