@@ -18,11 +18,12 @@ class CheckBox(QWidget):
         lay = QGridLayout()
         lay.addWidget(chkBox)
         lay.setContentsMargins(2, 2, 2, 2)
-        lay.setAlignment(chkBox, Qt.AlignCenter)
+        lay.setAlignment(chkBox, Qt.AlignmentFlag.AlignCenter)
 
         self.setLayout(lay)
 
     def __sendCheckedSignal(self, flag):
+        flag = Qt.CheckState(flag)
         self.checkedSignal.emit(self.__r_idx, flag)
 
     def isChecked(self):
